@@ -5,7 +5,7 @@
       var ua = navigator.userAgent.toLowerCase();
       if (ua.indexOf("android") > -1) {
         window.location.href =
-          "market://details?id=com.nhn.android.search&hl=ko";
+          "intent://details?id=com.nhn.android.search&url=https://www.naver.com#Intent;package=com.android.vending;scheme=https;end";
       } else if (
         ua.indexOf("iphone") > -1 ||
         ua.indexOf("ipad") > -1 ||
