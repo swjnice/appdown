@@ -1,21 +1,18 @@
 <!DOCTYPE html>
 <html>
-  <body>
-    <script>
-      var ua = navigator.userAgent.toLowerCase();
-      if (ua.indexOf("android") > -1) {
-        window.location.href =
-          "https://play.google.com/store/apps/details?id=com.inbody2014.inbody";
-      } else if (
-        ua.indexOf("iphone") > -1 ||
-        ua.indexOf("ipad") > -1 ||
-        ua.indexOf("ipod") > -1
-      ) {
-        window.location.href = "https://apps.apple.com/app/idyourappid";
-      } else {
-        // For desktop or unsupported devices, perhaps redirect to a general download page or website home
-        window.location.href = "https://www.yourwebsite.com";
-      }
-    </script>
-  </body>
+<body>
+
+<script>
+var ua = navigator.userAgent.toLowerCase();
+if (ua.indexOf("android") > -1) {
+    window.location.href = "intent://details?id=com.example.yourapp&url=https://www.yourwebsite.com#Intent;package=com.android.vending;scheme=https;end";
+} else if (ua.indexOf("iphone") > -1 || ua.indexOf("ipad") > -1 || ua.indexOf("ipod") > -1) {
+    window.location.href = "itms-apps://apps.apple.com/app/idyourappid";
+} else {
+    // For desktop or unsupported devices, perhaps redirect to a general download page or website home
+    window.location.href = "https://www.yourwebsite.com";
+}
+</script>
+
+</body>
 </html>
