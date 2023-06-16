@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html>
   <body>
+    <!-- This is the message that will be shown if the user is on iOS -->
+    <div id="iosMessage" style="display: none">
+      <h2>iOS APP은 곧 출시 예정입니다.</h2>
+    </div>
+
     <script>
       var ua = navigator.userAgent.toLowerCase();
       if (ua.indexOf("android") > -1) {
@@ -10,11 +15,16 @@
         ua.indexOf("ipad") > -1 ||
         ua.indexOf("ipod") > -1
       ) {
-        window.location.href = "itms-apps://apps.apple.com/app/idyourappid";
+        // window.location.href = "itms-apps://apps.apple.com/app/idyourappid";
+        document.getElementById("iosMessage").style.display = "block";
       } else {
         // For desktop or unsupported devices, perhaps redirect to a general download page or website home
-        window.location.href = "https://www.yourwebsite.com";
+        window.location.href =
+          "https://play.google.com/store/apps/details?id=com.korot.bp_app";
       }
     </script>
+
+    <button onclick="window.Android.postMessage('https://www.google.com')">
+      Android
   </body>
 </html>
